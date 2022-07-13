@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Shin-O-Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  font-size: 15pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #333;
+}
+
+.container{
+  position: relative;
+  width: 300px;
+  min-height: 400px;
+  background: #333;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+  10px 10px 70px rgba(0, 0, 0, 0.25),
+  inset -5px -5px 15px rgba(0, 0, 0, 0.5),
+  inset 5px 5px 15px rgba(0, 0, 0, 0.5)
+  
+}
+
+.calculator{
+  position: relative;
+  display: grid;
+}
+
+.calculator .value{
+  grid-column: span 4;
+  height: 70px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: rgba(130, 114, 89, 1);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: right;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  border: 2px ridge black;
+}
+
+
+
+
+
+.calculator span{
+  color: white;
+  position: relative;
+  place-items: center;
+  display: grid;
+  margin: 4px;
+  height: 50px;
+  width: 50px;
+  background: linear-gradient(45deg, #333, #111);
+  border-radius: 10px;
+  font-weight: 400;
+  border: 2px ridge black;
+}
+
+.calculator span::before{
+  content: '';
+  position: absolute;
+  top: 2px;
+  bottom: 5px;
+  left: 3px;
+  right: 4px;
+  background: linear-gradient(45deg, #202226, #302E2E);
+  border-radius: 7px;
+  
+}
+
+.calculator span:active{
+  filter: brightness(1.5)
+}
+
+.calculator span i{
+  position: relative;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  
+}
+
+.calculator .clear{
+  grid-column: span 2;
+  width: 110px;
+  background: orangered;
+  
+}
+
+.calculator .clear::before{
+  background: linear-gradient(#FF3333, #BD093F);
+}
+
+.calculator .add{
+  grid-row: span 2;
+  height: 110px;
+  
+}
+
+.calculator #equal{
+  background: #056CFF;
+}
+
+.calculator #equal::before{
+  background: linear-gradient(-45deg,#21A3FF,#1604D5);
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form name="calc" class="calculator">
+      <input type="text" class="value" readonly name="txt">
+      <span onclick="calc.txt.value=''" class="num clear"><i>C</i></span>
+      <span onclick="calc.txt.value+='/'" class="num"><i>/</i></span>
+      <span onclick="calc.txt.value+='*'" class="num"><i>*</i></span>
+      <span onclick="calc.txt.value+='7'" class="num"><i>7</i></span>
+      <span onclick="calc.txt.value+='8'" class="num"><i>8</i></span>
+      <span onclick="calc.txt.value+='9'" class="num"><i>9</i></span>
+      <span onclick="calc.txt.value+='-'" class="num"><i>-</i></span>
+      <span onclick="calc.txt.value+='4'" class="num"><i>4</i></span>
+      <span onclick="calc.txt.value+='5'" class="num"><i>5</i></span>
+      <span onclick="calc.txt.value+='6'" class="num"><i>6</i></span>
+      <span onclick="calc.txt.value+='+'" class="num add"><i>+</i></span>
+      <span onclick="calc.txt.value+='1'" class="num"><i>1</i></span>
+      <span onclick="calc.txt.value+='2'" class="num"><i>2</i></span>
+      <span onclick="calc.txt.value+='3'" class="num"><i>3</i></span>
+      <span onclick="calc.txt.value+='0'" class="num"><i>0</i></span>
+      <span onclick="calc.txt.value+='00'" class="num"><i>00</i></span>
+      <span onclick="calc.txt.value+='.'" class="num"><i>.
+      </i></span>
+      <span id="equal" onclick="document.calc.txt.value=eval(calc.txt.value)" class="num"><i>=</i></span>
+    </form>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
